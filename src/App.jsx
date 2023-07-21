@@ -31,10 +31,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Products category="All" products={products} setProducts={setProducts} searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="men's clothing" element={<Products category="men's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="women's clothing" element={<Products category="women's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="electronics" element={<Products category="electronics" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="jewelery" element={<Products category="jewelery" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/men's clothing/" element={<Products category="men's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/women's clothing/" element={<Products category="women's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/electronics/" element={<Products category="electronics" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/jewelery/" element={<Products category="jewelery" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
           <Route path="*" element={<_404 />} />
         </Routes>
       </Router>
