@@ -3,6 +3,26 @@
       {
         "source": "/(.*)",
         "destination": "/index.html"
-      }
+      },
+      {
+        "source": "/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/jewelery/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/electronics/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/women's clothing/",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/men's clothing/",
+        "destination": "/index.html"
+      },
    ]
 }
