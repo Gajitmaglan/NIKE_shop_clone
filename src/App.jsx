@@ -28,7 +28,7 @@ function App() {
     <div className="App">
       <Navbar onSearch={handleSearch} searchQuery={searchQuery} />
       <Header onSort={handleSort} itemCount={productsCount}/>
-      <Router>
+      <Router basename="https://nike-shop-three.vercel.app/">
         <Routes>
           <Route path="/" element={<Products category="All" products={products} setProducts={setProducts} searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
           <Route path="/men's clothing/" element={<Products category="men's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
