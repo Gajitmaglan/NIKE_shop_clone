@@ -8,7 +8,7 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [category]);
 
   const fetchProducts = async () => {
     try {
@@ -16,6 +16,20 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
       if (category === 'All') {
         url = "https://fakestoreapi.com/products/";
       } else {
+        switch (category) {
+          case "electronics":
+            category = "electronics";
+            break;
+          case "jewelery":
+            category = "jewelery";
+            break;
+          case "womens-clothing":
+            category = "women's clothing";
+            break;
+          case "mens-clothing":
+            category = "men's clothing";
+            break;
+        }
         url = "https://fakestoreapi.com/products/category/" + category;
       }
       const response = await fetch(url);

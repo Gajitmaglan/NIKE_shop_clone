@@ -5,6 +5,7 @@ import nikeLogo from '../assets/nike-logo.png';
 import LikedSVG from './LikedSVG';
 import CartSVG from './CartSVG';
 import SearchSVG from './SearchSVG';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({searchQuery, onSearch}) => {
     const [isActiveHamburger, setIsActiveHamburger] = useState(false);
@@ -18,11 +19,11 @@ const Navbar = ({searchQuery, onSearch}) => {
         </div>
         <div className={`menu ${isActiveHamburger ? 'active-menu' : ''}`}>
             <ul>
-                <li><div><a href="/">All</a></div></li>
-                <li><div><a href="/men's clothing">men's clothing</a></div></li>
-                <li><div><a href="/women's clothing">women's clothing</a></div></li>
-                <li><div><a href="/electronics">electronics</a></div></li>
-                <li><div><a href="/jewelery">jewelery</a></div></li>
+                <li><div><Link to="/">All</Link></div></li>
+                <li><div><Link to="/mens-clothing">Men's Clothing</Link></div></li>
+                <li><div><Link to="/womens-clothing">Women's Clothing</Link></div></li>
+                <li><div><Link to="/electronics">Electronics</Link></div></li>
+                <li><div><Link to="/jewelery">Jewelry</Link></div></li>
             </ul>
         </div>
         <div className='functional'>

@@ -24,17 +24,19 @@ function App() {
     setProductsCount(count);
   }
 
+// https://nike-shop-three.vercel.app
+
   return (
     <div className="App">
+      <Router basename="/">
       <Navbar onSearch={handleSearch} searchQuery={searchQuery} />
       <Header onSort={handleSort} itemCount={productsCount}/>
-      <Router basename="https://nike-shop-three.vercel.app/">
         <Routes>
           <Route path="/" element={<Products category="All" products={products} setProducts={setProducts} searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="/men's clothing/" element={<Products category="men's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="/women's clothing/" element={<Products category="women's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="/electronics/" element={<Products category="electronics" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
-          <Route path="/jewelery/" element={<Products category="jewelery" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/mens-clothing" element={<Products category="men's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/womens-clothing" element={<Products category="women's clothing" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/electronics" element={<Products category="electronics" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
+          <Route path="/jewelery" element={<Products category="jewelery" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
           <Route path="*" element={<_404 />} />
         </Routes>
       </Router>
