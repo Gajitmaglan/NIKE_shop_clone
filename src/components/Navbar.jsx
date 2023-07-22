@@ -23,7 +23,7 @@ const Navbar = ({searchQuery, onSearch}) => {
                 <li><div><Link to="/mens-clothing">Men's Clothing</Link></div></li>
                 <li><div><Link to="/womens-clothing">Women's Clothing</Link></div></li>
                 <li><div><Link to="/electronics">Electronics</Link></div></li>
-                <li><div><Link to="/jewelery">Jewelry</Link></div></li>
+                <li><div><Link to="/jewelery">Jewelery</Link></div></li>
             </ul>
         </div>
         <div className='functional'>
