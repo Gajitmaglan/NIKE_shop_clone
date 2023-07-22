@@ -24,6 +24,8 @@ function App() {
     setProductsCount(count);
   }
 
+  console.log("App rendered");
+  
 // https://nike-shop-three.vercel.app
 
   return (
