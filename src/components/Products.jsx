@@ -7,6 +7,7 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+    console.log("fetched data")
     fetchProducts();
   }, [category]);
 
