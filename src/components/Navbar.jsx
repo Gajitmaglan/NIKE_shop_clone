@@ -12,6 +12,12 @@ const Navbar = ({searchQuery, onSearch}) => {
     const handleClick = () => {
         setIsActiveHamburger(!isActiveHamburger);
     }
+
+    const closeActiveMenu = () => {
+        if (isActiveHamburger)
+            setIsActiveHamburger(false);
+    }
+
   return (
     <nav className={isActiveHamburger ? 'hide' : ''}>
         <div className='logo'>
@@ -19,11 +25,11 @@ const Navbar = ({searchQuery, onSearch}) => {
         </div>
         <div className={`menu ${isActiveHamburger ? 'active-menu' : ''}`}>
             <ul>
-                <li><div><Link to="/">All</Link></div></li>
-                <li><div><Link to="/mens-clothing">Men's Clothing</Link></div></li>
-                <li><div><Link to="/womens-clothing">Women's Clothing</Link></div></li>
-                <li><div><Link to="/electronics">Electronics</Link></div></li>
-                <li><div><Link to="/jewelery">Jewelery</Link></div></li>
+                <li><div><Link onClick={closeActiveMenu} to="/">All</Link></div></li>
+                <li><div><Link onClick={closeActiveMenu} to="/mens-clothing">Men's Clothing</Link></div></li>
+                <li><div><Link onClick={closeActiveMenu} to="/womens-clothing">Women's Clothing</Link></div></li>
+                <li><div><Link onClick={closeActiveMenu} to="/electronics">Electronics</Link></div></li>
+                <li><div><Link onClick={closeActiveMenu} to="/jewelery">Jewelery</Link></div></li>
             </ul>
         </div>
         <div className='functional'>
