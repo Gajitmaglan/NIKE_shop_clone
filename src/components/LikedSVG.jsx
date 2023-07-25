@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LikedSVG = () => {
+const LikedSVG = ({fill}) => {
   return (
     <svg
       aria-hidden="true"
@@ -10,7 +10,7 @@ const LikedSVG = () => {
       role="img"
       width="24px"
       height="24px"
-      fill="none"
+      fill={fill}
     >
       <path
         stroke="currentColor"

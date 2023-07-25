@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import Products from './components/Products';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import _404 from './components/_404';
+import FavoriteCard from './components/FavoriteCard';
+import Favourites from './components/Favourites';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -40,6 +42,7 @@ function App() {
           <Route path="/electronics" element={<Products category="electronics" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
           <Route path="/jewelery" element={<Products category="jewelery" searchQuery={searchQuery} sortOption={sortOption} updateProductsCount={updateProductsCount} />} />
           <Route path="*" element={<_404 />} />
+          <Route path="/favourites" element={<Favourites />} />
         </Routes>
       </Router>
     </div>

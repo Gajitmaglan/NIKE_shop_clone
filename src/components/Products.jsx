@@ -5,9 +5,28 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
   const [sortedFilteredProducts, setSortedFilteredProducts] = useState([]);
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [likedProducts, setLikedProducts] = useState([]);
 
   useEffect(() => {
-    console.log("fetched data")
+    // Get liked products from localStorage at component mount
+    const likedProductsFromLocalStorage = JSON.parse(localStorage.getItem('likedProducts')) || [];
+    setLikedProducts(likedProductsFromLocalStorage);
+  
+    // Fetch products here or do any other initialization logic
+    fetchProducts();
+  }, []);
+
+  const handleLike = (productId) => {
+    console.log(localStorage.likedProducts)
+    if (!likedProducts.includes(productId)) {
+      const updatedLikedProducts = [...likedProducts, productId];
+      setLikedProducts(updatedLikedProducts);
+  
+      localStorage.setItem('likedProducts', JSON.stringify(updatedLikedProducts));
+    }
+  };
+
+  useEffect(() => {
     fetchProducts();
   }, [category]);
 
@@ -31,6 +50,8 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
             category = "men's clothing";
             break;
         }
+        // CORS:
+        // url = "https://cors-anywhere.herokuapp.com/https://fakestoreapi.com/products/category/" + category;
         url = "https://fakestoreapi.com/products/category/" + category;
       }
       const response = await fetch(url);
@@ -88,7 +109,7 @@ const Products = ({ category, sortOption, searchQuery, updateProductsCount }) =>
           {sortedFilteredProducts.length > 0 ? (
             <div className="cards">
               {sortedFilteredProducts.map((product) => (
-                <Card key={product.id} {...product} />
+                <Card key={product.id} {...product} handleLike={handleLike} />
               ))}
             </div>
           ) : (

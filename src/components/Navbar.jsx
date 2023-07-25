@@ -45,7 +45,7 @@ const Navbar = ({searchQuery, onSearch}) => {
                 />
             </div>
             <div className="liked">
-                {<LikedSVG />}
+                <Link onClick={closeActiveMenu} to="/favourites"><LikedSVG fill="white" /></Link>
             </div>
             <div className="cart">
                 <CartSVG />

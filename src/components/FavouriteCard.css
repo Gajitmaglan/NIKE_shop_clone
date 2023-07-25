@@ -1,0 +1,83 @@
+.favcard {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 2rem;
+}
+
+.fav-img-box {
+    margin: auto;
+    height: 8rem;
+}
+.favcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.fav-text, .btns, .fav-price {
+    margin: auto 0;
+}
+
+.fav-text {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.fav-text .fav-title {
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.fav-add-to-cart {
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+}
+
+.favcard button {
+    margin: auto;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 2rem;
+    margin-top: 5px;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .favcard button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .price-and-delete {
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+@media screen and (max-width: 1375px) {
+    .favcard {
+        grid-template-columns: 1fr 4fr 1fr;
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 885px) {
+    .favcard {
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 0px;
+    }
+    .fav-text {
+        font-size: small;
+    }
+    .span-two-columns {
+        grid-column: 2 / span 2;
+      }
+}
